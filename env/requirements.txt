@@ -1,0 +1,5 @@
+requests
+robotframework==4.0rc1 
+robotframework-requests 
+robotframework-seleniumlibrary 
+selenium
