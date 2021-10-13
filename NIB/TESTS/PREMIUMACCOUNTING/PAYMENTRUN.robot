@@ -10,7 +10,8 @@ Happy path Claims Payment Run
     SEL.Maximize Browser Window
 
     #LOGIN
-    Perform Login                              dann        salus123   
+    Perform Login                              ${INPUT_LOGIN['VALID']['USERNAME']}        
+    ...                                        ${INPUT_LOGIN['VALID']['PASSWORD']}   
     
     #Navigate to Payment Run
     Navigate to Payment Run

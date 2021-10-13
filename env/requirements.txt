@@ -1,5 +1,6 @@
 requests
 robotframework==4.0rc1 
 robotframework-requests 
-robotframework-seleniumlibrary 
+robotframework-seleniumlibrary
+robotframework-faker
 selenium

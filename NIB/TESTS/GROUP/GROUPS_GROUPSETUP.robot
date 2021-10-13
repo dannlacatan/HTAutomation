@@ -10,16 +10,21 @@ End to End Regression
     SEL.Maximize Browser Window
 
     #LOGIN
-    Perform Login                               dann        salus123          
+    Perform Login                               ${LOGIN['VALID']['USERNAME']}        
+    ...                                         ${LOGIN['VALID']['PASSWORD']}          
 
     #CREATE GROUP
     Navigate to Group Setup
     Click Group Setup New Button
-    Provide Group details                       NWO TEST GROUP40    09/09/2021    GROUP    1000    ANNUAL
+    Provide Group details                       ${ADDGROUP['VALID']['GRPNAME']}    
+    ...                                         ${ADDGROUP['VALID']['GRPSTARTDATE']}    
+    ...                                         ${ADDGROUP['VALID']['GRPTYPE']}        
+    ...                                         ${ADDGROUP['VALID']['GRPBRANCH']}    
+    ...                                         ${ADDGROUP['VALID']['GRPFREQUENCY']}
     Save Group details
     
     #GROUPDETAILS ASSERTIONS
-    Validate display message                    Groups saved
+    Validate display message                    ${SPIELS_PAGE_ADDGRP['VALID']['SUCCESS_SAVED_MESSAGE']}
 
     #GROUPCONTACTS
     Navigate to Group Contacts tab

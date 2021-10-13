@@ -10,16 +10,17 @@ End to End Regression
     SEL.Maximize Browser Window
 
     #LOGIN
-    Perform Login                               dann        salus123          
- 
+    Perform Login                               ${INPUT_LOGIN['VALID']['USERNAME']}        
+    ...                                         ${INPUT_LOGIN['VALID']['PASSWORD']}          
+
     #CREATE GROUP
     Navigate to Group Setup
-    Click Group Setup New  Button
+    Click Group Setup New Button
     Provide Group details                       NWO TEST GROUP58    09/09/2021    GROUP    1000    ANNUAL
     Save Group details
     
     #GROUPDETAILS ASSERTIONS
-    Validate display message                    Groups saved
+    Validate display message                    ${SPIELS_PAGE_ADDGRP['VALID']['SUCCESS_SAVED_MESSAGE']}
 
     #GROUPCONTACTS
     Navigate to Group Contacts tab
@@ -27,7 +28,7 @@ End to End Regression
     Save Group Contacts information
 
     #GROUPCONTACTS ASSERTIONS
-    Validate display message                    Contact saved successfully                                                          
+    Validate display message                    ${SPIELS_PAGE_GRPCONTACTS['VALID']['SUCCESS_SAVED_MESSAGE']}                                                         
 
     #GROUPADDRESS
     Navigate to Group Address tab
@@ -35,7 +36,7 @@ End to End Regression
     Save Group Address information
 
     #GROUPADDRESS 
-    Validate display message                    Group Street Address saved
+    Validate display message                    ${SPIELS_PAGE_GRPADDRESS['VALID']['SUCCESS_SAVED_MESSAGE']}
    
     #GROUPADVISOR
     # Navigate to Group Advisor tab
@@ -49,7 +50,7 @@ End to End Regression
     Save Group Plan details
 
     #GPPT ASSERTIONS
-    Validate display message                    Group plan saved
+    Validate display message                    ${SPIELS_PAGE_ADDGPPT['VALID']['SUCCESS_SAVED_MESSAGE']}
 
     #GPPTBILLING PT1
     Navigate to Group Plan Billing Details
@@ -57,13 +58,13 @@ End to End Regression
     Save Group Plan Billing Account
 
     #ADDBILLING ASSERTION
-    Validate display message                    Billing Details saved
+    Validate display message                    ${SPIELS_PAGE_GPPTBILLING['VALID']['SUCCESS_SAVED_MESSAGE']}
 
     #GPPTBILLING PT2
     Save Group Plan Billing Details
 
     #GPPTBILLING ASSERTION
-    Validate display message                    Billing Details saved
+    Validate display message                    ${SPIELS_PAGE_GPPTBILLING['VALID']['SUCCESS_SAVED_MESSAGE']}
     
     #GPPTPO
     Navigate to Group Plan Product Option
@@ -74,7 +75,7 @@ End to End Regression
     Save Group Plan Product Option information
 
     #GPPTPO ASSERTION #LOOP BASED ON DATA COUNT
-    Validate display message                    Saved Product Option
+    Validate display message                    ${SPIELS_PAGE_GPPTPO['VALID']['SUCCESS_SAVED_MESSAGE']}
 
     #GPPTADVISOR
     Navigate to Group Plan Advisor
@@ -82,14 +83,14 @@ End to End Regression
     Save Group Plan Advisor
 
     #GPPTADVISOR ASSERTION
-    Validate display message                    Group Plan Advisor successfully saved
+    Validate display message                    ${SPIELS_PAGE_GPPTADVISOR['VALID']['SUCCESS_SAVED_MESSAGE']}
 
     #GPPTINFORCE
     Navigate to Group Plan details
     Set Group Plan to INFORCE
 
     #GPPTINFORCE ASSERTION
-    Validate display message                    Group plan saved
+    Validate display message                    ${SPIELS_PAGE_ADDGPPT['VALID']['SUCCESS_SAVED_MESSAGE']}
     
     #GROUPINFOCE
     Cancel from Group Plan details
@@ -98,7 +99,7 @@ End to End Regression
     Set Group Status to INFORCE
 
     #GROUPINFOCE ASSERTION
-    Validate display message                    Groups saved
+    Validate display message                    ${SPIELS_PAGE_ADDGRP['VALID']['SUCCESS_SAVED_MESSAGE']}
 
     #Navigate to Membership Group
     Navigate to Membership>Group
@@ -108,8 +109,8 @@ End to End Regression
     Provide Membership Group details            1    1    09/09/2021    ANNUAL    
     Save Membership Group details
 
-    #Create member assertion
-    Validate display message                    has been saved successfully
+    # #Create member assertion
+    # Validate display message                    has been saved successfully
     
     #MEMBERSHIP MEMBERS
     Navigate to Membership Members tab
@@ -123,7 +124,7 @@ End to End Regression
     Click Save icon
 
     #ADDMEMBER ASSERTION
-    Validate display message                    Policy member saved
+    Validate display message                    ${SPIELS_PAGE_ADDPOLICYMEMBER['VALID']['SUCCESS_SAVED_MESSAGE']}
     
     #MEM PRODUCT OPTION
     Navigate to Membership Product Option tab
@@ -131,15 +132,15 @@ End to End Regression
     #Generate Member Product
     
     #CREATEMEMPRODUCT ASSERTION
-    Validate display message                    Member Products Successfully created
+    Validate display message                    ${SPIELS_PAGE_CREATEMEMBERPRODUCT['VALID']['SUCCESS_SAVED_MESSAGE']}
 
     #INFORCE MEM
     Navigate to Membership Details tab
     Click Change Status link
     Set Membership Status to INFORCE
 
-    #CREATEMEMPRODUCT ASSERTION
-    Validate display message                    has been saved successfully
+    # #CREATEMEMPRODUCT ASSERTION
+    # Validate display message                    has been saved successfully
 
     #Navigate to Billing Submission
     Navigate to Billing>Submission
@@ -158,11 +159,11 @@ End to End Regression
     Click Receipt Entry New Button
 
     #PROVIDE ENTRY DETAILS
-    Provide Receipt Entry information          10    group    DC    100    End to End regression
+    Provide Receipt Entry information           10    group    DC    100    End to End regression
     Save Receipt Entry information
 
     #RECEIPT ENTRY ASSERTION
-    Validate display message                    Receipt saved
+    Validate display message                    ${SPIELS_PAGE_ADDRECEIPTENTRY['VALID']['SUCCESS_SAVED_MESSAGE']}
     
     #POLICY APPLICATION
     Navigate to Membership Application
@@ -170,7 +171,7 @@ End to End Regression
     Save Membership Application
     
     #POLICY APPLICATION ASSERTION
-    Validate display message                    Membership Application saved
+    Validate display message                    ${SPIELS_PAGE_ADDRECEIPTPOLICYAPP['VALID']['SUCCESS_SAVED_MESSAGE']}
 
     #Navigate to Hospital Claims
     Navigate to Claims>Hospital Claims
@@ -184,7 +185,7 @@ End to End Regression
     Click IP Claim Header Save Button
     
     #IP claim header assertion
-    Validate display message                                                                         Claim saved
+    Validate display message                    ${SPIELS_PAGE_CLAIM['VALID']['SUCCESS_HEADER_SAVED_MESSAGE']}
 
     #Claim line
     Select Claim Line Service                   HOSPBEDFEE
@@ -194,7 +195,7 @@ End to End Regression
     Add Member Payee                            Line 1    1032    City    12345
 
     #payee assertion
-    Validate display message                    MemberPayee saved
+    Validate display message                    ${SPIELS_PAGE_POLICYMEMBERPAYEE['VALID']['SUCCESS_HEADER_SAVED_MESSAGE']}
 
     #select payee
     Select Member Payee
@@ -204,23 +205,23 @@ End to End Regression
     Save Claim Line
     
     #Claim line creation assertion
-    Validate display message                    Claim Line saved
+    Validate display message                    ${SPIELS_PAGE_CLAIM['VALID']['SUCCESS_LINE_SAVED_MESSAGE']}
 
     #Process claim
     Adjudicate IP Claim
 
     #Assertion adjudicate
-    Validate display message                    The Claim Line has been adjudicated     
+    Validate display message                    ${SPIELS_PAGE_CLAIM['VALID']['SUCCESS_LINE_ADJUDICATED_MESSAGE']}    
 
     Approve IP Claim
 
     #Assertion approved
-    Validate display message                    Claim Settlement Report has been submitted
+    Validate display message                    ${SPIELS_PAGE_CLAIM['VALID']['SUCCESS_LINE_APPROVED_MESSAGE']}
 
     Authorize IP Claim
 
     #Assertion approved
-    Validate display message                    Claim saved
+    Validate display message                    ${SPIELS_PAGE_CLAIM['VALID']['SUCCESS_HEADER_SAVED_MESSAGE']}
 
     #Navigate to Primary Care Claims
     Navigate to Claims>Primary Care Claims
@@ -234,7 +235,7 @@ End to End Regression
     Click OP Claim Header Save button
     
     #OP claim header assertion
-    Validate display message                    Claim saved
+    Validate display message                    ${SPIELS_PAGE_CLAIM['VALID']['SUCCESS_HEADER_SAVED_MESSAGE']}
 
     #Claim line
     Provide Claim Line Treatment Date           09/09/2021
@@ -243,23 +244,23 @@ End to End Regression
     Save Claim Line
     
     #Claim line creation assertion
-    Validate display message                    Claim Line saved
+    Validate display message                    ${SPIELS_PAGE_CLAIM['VALID']['SUCCESS_LINE_SAVED_MESSAGE']}
 
     #Process claim
     Adjudicate OP Claim
 
     #Assertion adjudicate
-    #Validate display message                    The Claim Line has been adjudicated     
+    #Validate display message                    ${SPIELS_PAGE_CLAIM['VALID']['SUCCESS_LINE_ADJUDICATED_MESSAGE']}    
 
     Approve OP Claim
 
     #Assertion approved
-    #Validate display message                    Claim Settlement Report has been submitted
+    #Validate display message                    ${SPIELS_PAGE_CLAIM['VALID']['SUCCESS_LINE_APPROVED_MESSAGE']}
 
     Authorize OP Claim
 
     #Assertion approved
-    #Validate display message                    Claim saved
+    #Validate display message                    ${SPIELS_PAGE_CLAIM['VALID']['SUCCESS_HEADER_SAVED_MESSAGE']}
 
         #Navigate to PA Claims
     Navigate to Claims>Prior Approval Claims
@@ -273,7 +274,7 @@ End to End Regression
     Click PA Claim Header Save button
     
     #PA claim header assertion
-    Validate display message                    Prior Approval saved
+    Validate display message                    ${SPIELS_PAGE_PACLAIM['VALID']['SUCCESS_HEADER_SAVED_MESSAGE']}
 
     #Claim line
     Select PA Claim Line Service                1883
@@ -285,23 +286,23 @@ End to End Regression
     Save PA Claim Line
     
     #Claim line creation assertion
-    Validate display message                    Prior Approval Line saved
+    Validate display message                    ${SPIELS_PAGE_PACLAIM['VALID']['SUCCESS_LINE_SAVED_MESSAGE']}
 
     #Process claim
     Adjudicate PA Claim
 
     #Assertion adjudicate
-    Validate display message                    The Prior Approval has been adjudicated     
+    Validate display message                    ${SPIELS_PAGE_PACLAIM['VALID']['SUCCESS_LINE_ADJUDICATED_MESSAGE']}    
 
     Approve PA Claim
 
     #Assertion approved
-    Validate display message                    Prior Approval saved
+    Validate display message                    ${SPIELS_PAGE_PACLAIM['VALID']['SUCCESS_HEADER_SAVED_MESSAGE']}
 
     Authorize PA Claim
 
     #Assertion approved
-    Validate display message                    Prior Approval saved
+    Validate display message                    ${SPIELS_PAGE_PACLAIM['VALID']['SUCCESS_HEADER_SAVED_MESSAGE']}
 
     #Convert Claim
     Convert to Claim
@@ -311,7 +312,7 @@ End to End Regression
     Click IP Claim Header Save button
 
     #Assertion save convert header claim
-    Validate display message                    Claim saved
+    Validate display message                    ${SPIELS_PAGE_CLAIM['VALID']['SUCCESS_HEADER_SAVED_MESSAGE']}
 
     #Edit Claim line
     Edit Claim Line
@@ -324,7 +325,7 @@ End to End Regression
     Save Claim Line
 
     #Assertion claim line save
-    Validate display message                    Claim Line saved
+    Validate display message                    ${SPIELS_PAGE_CLAIM['VALID']['SUCCESS_LINE_SAVED_MESSAGE']}
 
     Adjudicate IP Claim
     Approve IP Claim
